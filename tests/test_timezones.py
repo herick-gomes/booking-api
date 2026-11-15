@@ -73,3 +73,9 @@ def test_timezone_and_invalid_windows(client, setup):
         ).status_code
         == 422
     )
+
+
+def test_availability_rejects_extreme_dates(client, setup):
+    for first_day in ("0001-01-01", "9999-12-31"):
+        response = client.get("/services/1/availability", params={"first_day": first_day, "days": 7})
+        assert response.status_code == 422

@@ -181,6 +181,9 @@ def promote_waitlist(db, pro, start):
 
 def slots(db, service, pro, first_day, days):
     zone = ZoneInfo(db.get(Business, pro.business_id).timezone)
+    today = now().astimezone(zone).date()
+    if first_day < today or first_day > today + timedelta(days=90):
+        raise HTTPException(422, "Availability must start between today and 90 days ahead.")
     lower = datetime.combine(first_day, datetime.min.time(), tzinfo=zone).astimezone(timezone.utc)
     upper = datetime.combine(first_day + timedelta(days=days), datetime.min.time(), tzinfo=zone).astimezone(
         timezone.utc

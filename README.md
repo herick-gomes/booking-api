@@ -106,7 +106,7 @@ ruff check .
 ruff format --check .
 ```
 
-The CI also checks migration upgrade/downgrade, schema drift, a Docker Compose HTTP flow, and delivery through the separate worker and dispatcher. Initial local validation: **49 tests passed, 97.96% statement coverage**. Coverage is not a claim that every concurrency or production failure has been proven safe.
+The CI also checks migration upgrade/downgrade, schema drift, a Docker Compose HTTP flow, and delivery through the separate worker and dispatcher. Initial local validation: **50 tests passed, 97.96% statement coverage**. Coverage is not a claim that every concurrency or production failure has been proven safe.
 
 ## Scope and next steps
 

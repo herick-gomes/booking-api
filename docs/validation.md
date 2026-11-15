@@ -3,7 +3,7 @@
 Initial local validation on 2026-11-15:
 
 - Python 3.12, PostgreSQL 17 and Redis 8.
-- 49 pytest cases passed; statement coverage 97.96% (displayed as 98%).
+- 50 pytest cases passed; statement coverage 97.96% (displayed as 98%).
 - Migration upgrade/downgrade round trip and Alembic schema-drift check passed.
 - Ruff lint and formatting checks passed.
 - Live Uvicorn HTTP demo passed: account creation, catalogue setup, booking, conflict response, waitlist and cancellation/promotion.
